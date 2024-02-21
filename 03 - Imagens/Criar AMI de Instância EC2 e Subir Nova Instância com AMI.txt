@@ -1,0 +1,31 @@
+Criar uma Amazon Machine Image (AMI) de uma instância EC2 permite que você faça uma cópia exata da instância, incluindo todas as configurações, softwares e dados armazenados no volume raiz da instância. Depois de criar a AMI, você pode usar essa AMI para lançar novas instâncias, facilitando a replicação de ambientes, a realização de backups ou a escalabilidade de aplicações. Aqui está como você pode criar uma AMI de uma instância EC2 existente e, em seguida, usar essa AMI para subir uma nova instância:
+
+Criar uma AMI de uma Instância EC2 Existente
+Acesse o Console de Gerenciamento da AWS: Faça login na AWS Management Console e vá para o serviço EC2.
+
+Selecione a Instância: No painel de navegação esquerdo, sob a seção "Instâncias", clique em "Instâncias". Encontre a instância da qual deseja criar a AMI.
+
+Criar a AMI: Selecione a instância clicando na caixa de seleção ao lado dela. No menu "Ações", passe o mouse sobre "Imagem e modelos" e clique em "Criar imagem".
+
+Configurar a Imagem: No formulário "Criar imagem", forneça um nome e uma descrição para a sua AMI. Você também pode especificar volumes adicionais se necessário, mas o volume raiz será incluído automaticamente.
+
+Criar Imagem: Clique em "Criar imagem" para iniciar o processo. A criação da AMI pode levar algum tempo, dependendo do tamanho da instância.
+
+Verificar o Status da AMI: Você pode verificar o status da sua AMI navegando até "Imagens" > "AMIs" no painel de navegação esquerdo. A AMI estará pronta para uso quando o status mudar para "Disponível".
+
+Lançar uma Nova Instância Usando a AMI Criada
+Acessar AMIs: No painel de navegação esquerdo do console EC2, clique em "Imagens" e depois em "AMIs". Aqui, você encontrará a AMI que acabou de criar.
+
+Selecionar a AMI para Lançamento: Encontre a AMI que você deseja usar e selecione-a. Clique em "Ações" e escolha "Lançar".
+
+Escolher um Tipo de Instância: Você será solicitado a escolher um tipo de instância. Selecione o tipo de instância que deseja usar para a nova instância e clique em "Próximo: Configurar Instância".
+
+Configurar a Instância e Adicionar Armazenamento: Siga as instruções para configurar a instância conforme necessário. Você também pode adicionar volumes de armazenamento adicionais.
+
+Configurar o Grupo de Segurança: Escolha um grupo de segurança existente ou crie um novo. Certifique-se de que as regras de entrada e saída atendem às necessidades da sua aplicação.
+
+Revisar e Lançar: Revise suas configurações. Quando estiver pronto, clique em "Lançar". Você será solicitado a selecionar um par de chaves. Escolha um par de chaves existente ou crie um novo, e marque a caixa de verificação para reconhecer que você tem acesso ao par de chaves selecionado.
+
+Lançar a Instância: Clique em "Lançar Instâncias". Sua nova instância será iniciada usando a AMI que você criou.
+
+Criar uma AMI e usá-la para lançar novas instâncias é uma forma eficaz de replicar ambientes, facilitar a recuperação de desastres ou escalar aplicações horizontalmente na AWS.

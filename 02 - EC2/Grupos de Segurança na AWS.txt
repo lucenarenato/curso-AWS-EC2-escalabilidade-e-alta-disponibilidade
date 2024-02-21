@@ -1,0 +1,38 @@
+1. Acesse o Console da AWS
+Faça login no Console de Gerenciamento da AWS em https://aws.amazon.com/console/ usando suas credenciais.
+
+2. Navegue até o EC2 Dashboard
+No Console de Gerenciamento da AWS, procure por "EC2" na caixa de busca ou encontre-o na seção "Serviços" e clique para acessar o EC2 Dashboard.
+
+3. Acesse Grupos de Segurança
+No painel de navegação esquerdo, dentro do dashboard do EC2, você encontrará "Grupos de Segurança" sob a seção "Segurança de Rede". Clique em "Grupos de Segurança" para abrir a página de gerenciamento dos grupos.
+
+4. Criar um Novo Grupo de Segurança
+Na página de Grupos de Segurança, clique no botão "Criar grupo de segurança". Isso abrirá uma nova janela ou aba para a configuração do grupo.
+
+5. Configure as Definições do Grupo de Segurança
+Na janela de criação, você precisará fornecer algumas informações básicas:
+
+Nome do grupo de segurança: Escolha um nome identificável para o seu grupo de segurança.
+Descrição: Forneça uma descrição clara que explique o propósito do grupo de segurança.
+VPC: Selecione a VPC (Virtual Private Cloud) onde o grupo de segurança será criado. Se você não criou uma VPC personalizada, pode usar a VPC padrão.
+Clique em "Criar" após preencher esses detalhes.
+
+6. Adicione Regras de Entrada e Saída
+Depois de criar o grupo de segurança, você precisará configurar as regras de entrada (ingress) e saída (egress).
+
+Adicionar Regras de Entrada: Selecione o grupo de segurança recém-criado e vá para a aba "Regras de entrada". Clique em "Editar regras de entrada" para adicionar novas regras. Aqui, você pode especificar as portas, protocolos e faixas de endereços IP que são permitidos acessar suas instâncias.
+Adicionar Regras de Saída: Similarmente, vá para a aba "Regras de saída" e clique em "Editar regras de saída" para especificar o tráfego permitido para sair de suas instâncias.
+Para cada regra, você pode especificar:
+
+Tipo: O tipo de tráfego (por exemplo, SSH, HTTP).
+Protocolo: O protocolo usado (por exemplo, TCP, UDP).
+Faixa de Portas: A porta ou faixa de portas que o tráfego usará.
+Origem (para regras de entrada) / Destino (para regras de saída): O endereço IP ou faixa de endereços IP permitidos para o tráfego de entrada, ou para onde o tráfego de saída pode ir. Você também pode usar outro grupo de segurança como origem ou destino.
+7. Salve as Configurações
+Depois de configurar as regras conforme necessário, clique em "Salvar" para aplicar as configurações ao seu grupo de segurança.
+
+Dicas Importantes
+Princípio do Menor Privilégio: Aplique o princípio do menor privilégio, permitindo apenas o tráfego necessário para operar sua aplicação ou serviço.
+Endereços IP Específicos: Sempre que possível, evite usar endereços IP abrangentes (como 0.0.0.0/0 para tráfego de entrada), especialmente para portas sensíveis como SSH (22) ou RDP (3389).
+Criar e configurar Grupos de Segurança cuidadosamente é vital para manter suas instâncias EC2 e outros recursos da AWS seguros e acessíveis conforme necessário.

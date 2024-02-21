@@ -1,0 +1,18 @@
+Create script "User data" aws ec2, for install docker and docker-compose in linux with yum
+
+Here is an example of a script that can be used as user data for an AWS EC2 instance running a Linux AMI (with yum package manager) to install Docker and Docker Compose:
+#!/bin/bash
+
+# Install Docker
+sudo yum update -y
+sudo yum install -y docker
+
+# Start the Docker service
+sudo service docker start
+
+# Add the current user to the "docker" group
+sudo usermod -a -G docker $USER
+
+# Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose

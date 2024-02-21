@@ -1,0 +1,33 @@
+1. Crie uma Conta AWS
+Se você ainda não tem uma conta na Amazon Web Services (AWS), precisará criar uma. Visite https://aws.amazon.com/ e clique em "Criar uma conta da AWS".
+
+2. Acesse o Console de Gerenciamento da AWS
+Depois de criar sua conta e fazer login, você será direcionado ao Console de Gerenciamento da AWS. O console é o painel de controle onde você pode acessar, gerenciar e criar recursos da AWS.
+
+3. Lançar uma Nova Instância EC2
+Siga estas etapas para lançar uma nova instância:
+
+No Console de Gerenciamento da AWS, localize e selecione "EC2" sob "Serviços" ou use a caixa de pesquisa para encontrar "EC2".
+Na página do EC2 Dashboard, clique em "Launch Instance" para iniciar o processo de criação de uma nova instância.
+Escolha uma Imagem de Máquina Amazon (AMI): Você verá uma lista de AMIs (Amazon Machine Images). Escolha uma que se adeque às suas necessidades, como uma instância Linux ou Windows.
+Escolha um Tipo de Instância: Selecione o tipo de instância que deseja. Isso define o hardware da máquina host. Para testes, você pode começar com uma instância "t2.micro", que está no nível gratuito.
+Configurar Instância: Aqui, você pode configurar detalhes da instância, como número de instâncias, rede e grupo de segurança (firewall).
+Adicionar Armazenamento: Você pode adicionar ou modificar volumes de armazenamento para sua instância.
+Configurar Grupo de Segurança: É crucial configurar corretamente o grupo de segurança para controlar o acesso à sua instância. Você pode criar um novo grupo de segurança ou selecionar um existente. Certifique-se de abrir a porta 22 (SSH) para poder acessar sua instância via SSH mais tarde.
+Revisar e Lançar: Revise suas configurações. Quando estiver pronto, clique em "Launch".
+4. Criar um Par de Chaves
+Durante o processo de lançamento, você será solicitado a criar um novo par de chaves ou usar um existente. Se for sua primeira vez, você precisará criar um novo. Dê um nome ao seu par de chaves e faça o download do arquivo .pem. Este arquivo é crucial para acessar sua instância de forma segura e não pode ser baixado novamente, então guarde-o em um local seguro.
+
+5. Acessar a Instância
+Após a instância estar rodando, você pode acessá-la:
+
+Para instâncias Linux:
+
+Abra um terminal.
+Navegue até o diretório onde você salvou o arquivo .pem.
+Mude as permissões do arquivo para que somente você possa lê-lo, executando chmod 400 your-key-name.pem.
+Conecte-se à sua instância via SSH usando o comando: ssh -i your-key-name.pem ec2-user@your-instance-public-dns. O endereço DNS público da sua instância pode ser encontrado no Console EC2.
+Para instâncias Windows:
+
+Você precisará de um cliente RDP (Remote Desktop Protocol) e do arquivo .pem para obter a senha Windows.
+No console EC2, selecione sua instância e clique em "Connect" para obter instruções sobre como se conectar usando RDP.
