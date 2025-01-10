@@ -21,5 +21,5 @@
 
 
 Links Úteis:
-
+- https://github.com/especializati/aws-ec2-escala/tree/main
 - :tada: [Saiba Mais](https://linktr.ee/especializati)
